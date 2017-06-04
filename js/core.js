@@ -7,7 +7,7 @@ window.onload = function () {
 
     start_game.onclick = function () {
         initHearts();
-        menu_text.innerHTML = "Play Game?"
+        menu_text.innerHTML = "Play Game?";
         game_menu.style.display = "none";
     }
     quit_game.onclick = function () {
