@@ -40,8 +40,11 @@
 .standard-icon:hover{
     cursor: pointer;
 }
-.heart-icon{
-    background-image: url("../image/icons8-Hearts Filled-50.png")
+.score-2{
+    background-image: url("../image/icons8-Hearts Filled-50.png");
+}
+.score-1{
+    background-image: url("../image/icons8-Hearts-50.png");
 }
 
 #start-btn-icon{
