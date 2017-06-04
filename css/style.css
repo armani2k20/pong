@@ -78,6 +78,18 @@
 .game-action{
     height:50px;
 }
+.game-canvas{
+    position: absolute;
+    max-height:350px;
+    width: 100%;
+    background-color: white;
+    height:350px;
+    border-color: rgb(0,0,60);
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    bottom: 0;
+}
 /*.pause-btn{
     background-color: orange;
 }
