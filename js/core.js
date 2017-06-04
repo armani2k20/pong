@@ -14,7 +14,7 @@ window.onload = function () {
         game_menu.style.display = "block";
     }
     pause_game.onclick = function(){
-        loseLife();
+        
     }
 }
 
