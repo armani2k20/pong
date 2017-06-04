@@ -48,6 +48,10 @@
     z-index: 3000;
     display: block;
     animation-duration: 1s;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 687fefd6c6317bb89a69f1d9be58f83f86be406b
 }
 
 .game-menu-content{
@@ -119,8 +123,14 @@
     width: 100%;
     background-color: rgb(0,0,60);
     height:350px;
+<<<<<<< HEAD
     border-top-color: white;
     border-top-style: solid;
     
+=======
+    border-color: rgb(0,0,60);
+    border-top-color: white;
+    border-top-style: solid;
+>>>>>>> 687fefd6c6317bb89a69f1d9be58f83f86be406b
     bottom: 0;
 }
