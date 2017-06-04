@@ -3,7 +3,6 @@
     height: 400px;
     width: 600px;
     margin: 0 auto;
-<<<<<<< HEAD
     position: relative; 
 }
 
@@ -32,10 +31,6 @@
 #left-paddle{
     left: 5px;
 }
-=======
-    padding:0;
-    position: relative;
-}
 
 *{
     text-align: center;
@@ -52,7 +47,6 @@
     z-index: 3000;
     display: block;
     animation-duration: 1s;
-    animation: 
 }
 
 .game-menu-content{
@@ -60,19 +54,22 @@
     padding-bottom: 22%;
     margin:auto;
 }
+
 .icon-sm{
     height: 40px;
     width:40px;
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
+
 .standard-icon:hover{
     cursor: pointer;
 }
+
 .score-2{
     background-image: url("../image/icons8-Hearts Filled-50.png");
 }
+
 .score-1{
     background-image: url("../image/icons8-Hearts-50.png");
 }
@@ -80,21 +77,27 @@
 #start-btn-icon{
     background-image: url("../image/icons8-Circled Play-50.png")
 }
+
 #start-btn-icon:hover{
     background-image: url("../image/icons8-Circled Play Filled-50.png")
 }
+
 #pause-btn-icon{
     background-image: url("../image/icons8-Circled Pause-50.png")
 }
+
 #pause-btn-icon:hover{
     background-image: url("../image/icons8-Circled Pause Filled-50.png")
 }
+
 #quit-btn-icon{
     background-image: url("../image/icons8-Cancel-50.png")
 }
+
 #quit-btn-icon:hover{
     background-image: url("../image/icons8-Cancel Filled-50.png")
 }
+
 .game-actions{
     width:100%;
     padding:0;
@@ -108,6 +111,7 @@
 .game-action{
     height:50px;
 }
+
 .game-canvas{
     position: absolute;
     max-height:350px;
@@ -120,13 +124,3 @@
     border-right-style: solid;
     bottom: 0;
 }
-/*.pause-btn{
-    background-color: orange;
-}
-.quit-btn{
-    background-color: pink;
-}
-.game-health{
-    background-color: red;
-}*/
->>>>>>> 203ad528b1e0a0c1fa49e9b329cb6d00a37a7512
