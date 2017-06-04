@@ -10,7 +10,7 @@
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background-color: yellow;
+    background-color: #fff;
     margin: 0 auto;
     position: absolute;
     top: 60px;
@@ -18,18 +18,19 @@
 }
 
 .paddle{
-    height: 150px;
+    height: 100px;
     width: 10px;
-    background-color:red;
+    background-color: #fff;
     position: absolute;
+    top: 15px;
 }
 
 #right-paddle{
-    right: 5px;
+    right: 15px;
 }
 
 #left-paddle{
-    left: 5px;
+    left: 15px;
 }
 
 *{
@@ -116,11 +117,10 @@
     position: absolute;
     max-height:350px;
     width: 100%;
-    background-color: white;
+    background-color: rgb(0,0,60);
     height:350px;
-    border-color: rgb(0,0,60);
-    border-left-style: solid;
-    border-bottom-style: solid;
-    border-right-style: solid;
+    border-top-color: white;
+    border-top-style: solid;
+    
     bottom: 0;
 }
