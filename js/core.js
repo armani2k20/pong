@@ -2,7 +2,7 @@
 //ball items
 let ballVelocityX=2;
 let ballVelocityY=2;
-//health items
+
 
 window.onload = function () {
     let start_game = document.getElementById("start-btn-icon");
@@ -96,12 +96,9 @@ function move(){
     let hit = new Audio('audio/pong.wav');
     let crash = new Audio('audio/crash.wav')
 
-
-    //let ballVelocityX = 2;
-    //let ballVelocityY = 2;
     let goingRight = false;
     let goingDown = false;
-    //console.log("" + player.offsetTop + "," + (player.offsetHeight + player.offsetTop) + " - " )
+    
     var iid = setInterval( function() {
         let top = ball.offsetTop;
         let left = ball.offsetLeft;
@@ -115,13 +112,12 @@ function move(){
         let pad = 5
         let canvasWidth = document.getElementsByClassName("game-wrapper")[0].style.width;
         
-        //console.log("Player: " + playerTop + ", "+ playerBottom + ", " + playerBase + " Ball: " + top + ", " + left + " Opponent: " + opponentTop + ", "+opponentBottom + ", " + opponentBase + " " + opponent.offsetWidth + "  " + opponent.style.left)
         var y = ballVelocityY+top;
         var x= ballVelocityX+left;
-        if (top > 350-width) {ballVelocityY = -1*Math.abs(ballVelocityY); y = ballVelocityY+top;hit.play();} //console.log(" gt 249 top: " + top + " vy: " + ballVelocityY + " sum: " + x)}
-        if (left > 600-width) {ballVelocityX = -1 * Math.abs(ballVelocityX); x= ballVelocityX+left;hit.play();} //console.log(" gt 300 left: " + left + " vx: " + ballVelocityX + " sum: " + x)}
-        if (top < 0) {ballVelocityY =  Math.abs(ballVelocityY); y= ballVelocityY+top;hit.play();} //console.log(" lt 0 top: " + top + " vy: " + ballVelocityY + " sum: " + x)}
-        if (left < 0) { ballVelocityX = Math.abs(ballVelocityX);x = ballVelocityX+left;loseLife();crash.play();} //loseLife(); console.log(" lt 0 left: " + left + " vx: " + ballVelocityX + " sum: " + x)}
+        if (top > 350-width) {ballVelocityY = -1*Math.abs(ballVelocityY); y = ballVelocityY+top;hit.play();} 
+        if (left > 600-width) {ballVelocityX = -1 * Math.abs(ballVelocityX); x= ballVelocityX+left;hit.play();} 
+        if (top < 0) {ballVelocityY =  Math.abs(ballVelocityY); y= ballVelocityY+top;hit.play();}
+        if (left < 0) { ballVelocityX = Math.abs(ballVelocityX);x = ballVelocityX+left;loseLife();crash.play();} 
         if ((top >= playerTop-pad && top+width <= playerBottom+pad)&&(left <= playerBase)) {ballVelocityX = Math.abs(ballVelocityX); x= ballVelocityX+left;hit.play();}
         if ((top >= opponentTop-pad && top+width <= opponentBottom+pad)&&(left+width >= opponentBase)) {ballVelocityX = -1 * Math.abs(ballVelocityX); x= ballVelocityX+left;hit.play();}
 
