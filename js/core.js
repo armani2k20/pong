@@ -91,25 +91,40 @@ function init() {
 
 function move(){
     let ball = document.getElementById("ball");
+    let player = document.getElementById("left-paddle");
+    let opponent = document.getElementById("right-paddle");
+    let hit = new Audio('audio/pong.wav');
+    let crash = new Audio('audio/crash.wav')
+
+
     //let ballVelocityX = 2;
     //let ballVelocityY = 2;
     let goingRight = false;
     let goingDown = false;
-
+    //console.log("" + player.offsetTop + "," + (player.offsetHeight + player.offsetTop) + " - " )
     var iid = setInterval( function() {
         let top = ball.offsetTop;
         let left = ball.offsetLeft;
+        let width = ball.offsetWidth
+        let playerTop = player.offsetTop;
+        let playerBottom = player.offsetHeight + playerTop;
+        let playerBase = player.offsetLeft + player.offsetWidth;
+        let opponentTop = opponent.offsetTop;
+        let opponentBottom = opponent.offsetHeight + opponentTop;
+        let opponentBase = opponent.offsetLeft;
+        let pad = 5
         let canvasWidth = document.getElementsByClassName("game-wrapper")[0].style.width;
         
-        
+        //console.log("Player: " + playerTop + ", "+ playerBottom + ", " + playerBase + " Ball: " + top + ", " + left + " Opponent: " + opponentTop + ", "+opponentBottom + ", " + opponentBase + " " + opponent.offsetWidth + "  " + opponent.style.left)
         var y = ballVelocityY+top;
         var x= ballVelocityX+left;
-        if (top > 350-20) {ballVelocityY = -1*Math.abs(ballVelocityY); y = ballVelocityY+top;} //console.log(" gt 249 top: " + top + " vy: " + ballVelocityY + " sum: " + x)}
-        if (left > 600-20) {ballVelocityX = -1 * Math.abs(ballVelocityX); x= ballVelocityX+left;} //console.log(" gt 300 left: " + left + " vx: " + ballVelocityX + " sum: " + x)}
-        if (top < 0) {ballVelocityY =  Math.abs(ballVelocityY); y= ballVelocityY+top;} //console.log(" lt 0 top: " + top + " vy: " + ballVelocityY + " sum: " + x)}
-        if (left < 0) { ballVelocityX = Math.abs(ballVelocityX);x = ballVelocityX+left;loseLife()} //loseLife(); console.log(" lt 0 left: " + left + " vx: " + ballVelocityX + " sum: " + x)}
+        if (top > 350-width) {ballVelocityY = -1*Math.abs(ballVelocityY); y = ballVelocityY+top;hit.play();} //console.log(" gt 249 top: " + top + " vy: " + ballVelocityY + " sum: " + x)}
+        if (left > 600-width) {ballVelocityX = -1 * Math.abs(ballVelocityX); x= ballVelocityX+left;hit.play();} //console.log(" gt 300 left: " + left + " vx: " + ballVelocityX + " sum: " + x)}
+        if (top < 0) {ballVelocityY =  Math.abs(ballVelocityY); y= ballVelocityY+top;hit.play();} //console.log(" lt 0 top: " + top + " vy: " + ballVelocityY + " sum: " + x)}
+        if (left < 0) { ballVelocityX = Math.abs(ballVelocityX);x = ballVelocityX+left;loseLife();crash.play();} //loseLife(); console.log(" lt 0 left: " + left + " vx: " + ballVelocityX + " sum: " + x)}
+        if ((top >= playerTop-pad && top+width <= playerBottom+pad)&&(left <= playerBase)) {ballVelocityX = Math.abs(ballVelocityX); x= ballVelocityX+left;hit.play();}
+        if ((top >= opponentTop-pad && top+width <= opponentBottom+pad)&&(left+width >= opponentBase)) {ballVelocityX = -1 * Math.abs(ballVelocityX); x= ballVelocityX+left;hit.play();}
 
-        
         ball.style.left = x + "px";
         ball.style.top = y + "px";
 
